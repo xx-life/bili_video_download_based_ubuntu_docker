@@ -6,7 +6,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 USER root 
 
-ENV BILI_AV_NUM=10773012
+ENV BILI_AV_NUM=10773012 BILI_QUA=32
 
 ADD ./sources.list /etc/apt/sources.list 
 RUN apt-get -y update 
