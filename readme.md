@@ -17,3 +17,17 @@ docker run -it --rm -e BILI_AV_NUM=92340960 -v $(pwd)/bilibili_video:/data/bilib
 ```
 # 备注
 > 当前下载的是 720p 如果想下载其他的p 自己修改下脚本的`quality`即可，如果不满意自己可以放在环境变量中，这里就不优化了。
+
+
+## nginx 目录浏览功能
+> 就是在需要映射的路由下面添加下面几行代码; 如果不是root权限，需要chmod -R 使得目录具有nginx用户权限访问，这里就不赘述了，主要是记录下笔记。下面几行代码。
+
+```
+location / {
+           root /data ;
+           autoindex on;
+           autoindex_localtime on;
+           autoindex_exact_size off;
+        }
+```
+
